@@ -11,5 +11,8 @@ sPeriod = np.array([0.01,0.02,0.022,0.025,0.029,0.03,0.032,0.035,0.036,
   10])
 
 st = read('1994-01-17T12_30_12.010000Z.TS.SBC.BHZ.SAC',format = 'SAC')
+# Be sure that the preprocesses such as detrend are applied to signal.
+#st[0].detrend(type='simple')
+#st[0].taper(max_percentage=0.05,type='hann')
 PSA, PSV, SD = ins_resp(st[0].data*100, dt = st[0].stats.delta, periods = sPeriod, xi = 0.05)
 plotting(PSA,PSV,SD,sPeriod,logplot = True,saving = 'show_save',title = str(st[0].stats.station + '.' + st[0].stats.channel))
