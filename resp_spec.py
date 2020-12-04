@@ -28,7 +28,7 @@ def ins_resp(data, dt,periods = np.array([0.01,0.02,0.022,0.025,0.029,0.03,0.032
       INPUTS
       
   data    = numpy array type object (in acceleration (cm/s^2))
-  dt      = sampling rate
+  dt      = sampling interval
   periods = spectral periods (Default: 0.01 to 10 seconds with 100 sample)
   xi      = damping factor (Default: 0.05)
   
